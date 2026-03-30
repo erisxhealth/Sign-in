@@ -1,0 +1,97 @@
+.page {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 24px 20px;
+  background: var(--bg);
+  position: relative; overflow: hidden;
+}
+
+.page::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 65%, rgba(192,57,43,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card {
+  position: relative; z-index: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 44px 36px 40px;
+  text-align: center;
+  width: 100%; max-width: 340px;
+  animation: rise .35s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes rise {
+  from { transform: translateY(18px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+.gym {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px; letter-spacing: 4px;
+  color: var(--muted); margin-bottom: 28px;
+}
+
+.name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 46px; letter-spacing: 1px;
+  line-height: 1; margin-bottom: 6px;
+}
+
+.belt {
+  display: inline-block;
+  padding: 3px 13px; border-radius: 99px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.belt-white  { background: #ddd; color: #111; }
+.belt-blue   { background: #1a4f8c; color: #fff; }
+.belt-purple { background: #5c2d8f; color: #fff; }
+.belt-brown  { background: #6b3a24; color: #fff; }
+.belt-black  { background: #1e1e1e; color: #999; border: 1px solid #444; }
+
+.submit {
+  width: 100%; padding: 16px;
+  background: var(--red); border: none;
+  border-radius: var(--radius); color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 2px;
+  cursor: pointer; transition: background .15s, transform .1s;
+}
+.submit:hover   { background: var(--red2); }
+.submit:active  { transform: scale(.97); }
+.submit:disabled { opacity: .6; cursor: default; }
+
+.icon { font-size: 64px; margin-bottom: 14px; display: block; }
+
+.countBox {
+  margin: 20px 0 10px; padding: 18px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.countNum {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px; line-height: 1; color: var(--gold);
+}
+
+.countLabel {
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-top: 4px;
+}
+
+.note {
+  font-size: 13px; color: var(--muted);
+  margin-top: 16px; line-height: 1.6;
+}
+
+.loading {
+  color: var(--muted); font-size: 14px; padding: 20px 0;
+}
